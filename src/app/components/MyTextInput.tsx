@@ -2,47 +2,57 @@ import React from "react";
 import {
   TextInput,
   StyleSheet,
-  ViewStyle,
-  KeyboardType,
   TextInputProps,
+  Text,
+  View,
 } from "react-native";
 
-// interface InputProps {
-//   placeholder: string;
-//   value: string;
-//   onChangeText: (text: string) => void;
-//   secureTextEntry?: boolean;
-//   style?: ViewStyle;
-//   keyboardType?: KeyboardType;
-// }
+interface MyTextInputProps extends TextInputProps {
+  label?: string;
+}
 
 const MyTextInput = ({
+  label,
   placeholder,
   value,
   onChangeText,
   secureTextEntry = false,
   style,
   keyboardType,
-}: TextInputProps) => {
+  ...rest
+}: MyTextInputProps) => {
   return (
-    <TextInput
-      style={[styles.input, style]}
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-      keyboardType={keyboardType}
-    />
+    <View style={styles.container}>
+      {label && <Text style={styles.label}>{label}</Text>}
+      <TextInput
+        style={[styles.input, style]}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+        keyboardType={keyboardType}
+        {...rest}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+    width: "100%",
+  },
+  label: {
+    marginBottom: 5,
+    fontSize: 14,
+    color: "#333",
+  },
   input: {
     padding: 10,
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 4,
-    marginBottom: 10,
+    width: "100%",
   },
 });
 
