@@ -1,21 +1,29 @@
 import React from "react";
-import { TextInput, StyleSheet, ViewStyle } from "react-native";
+import {
+  TextInput,
+  StyleSheet,
+  ViewStyle,
+  KeyboardType,
+  TextInputProps,
+} from "react-native";
 
-interface InputProps {
-  placeholder: string;
-  value: string;
-  onChangeText: (text: string) => void;
-  secureTextEntry?: boolean;
-  style?: ViewStyle;
-}
+// interface InputProps {
+//   placeholder: string;
+//   value: string;
+//   onChangeText: (text: string) => void;
+//   secureTextEntry?: boolean;
+//   style?: ViewStyle;
+//   keyboardType?: KeyboardType;
+// }
 
-const MyInput = ({
+const MyTextInput = ({
   placeholder,
   value,
   onChangeText,
   secureTextEntry = false,
   style,
-}: InputProps) => {
+  keyboardType,
+}: TextInputProps) => {
   return (
     <TextInput
       style={[styles.input, style]}
@@ -23,6 +31,7 @@ const MyInput = ({
       value={value}
       onChangeText={onChangeText}
       secureTextEntry={secureTextEntry}
+      keyboardType={keyboardType}
     />
   );
 };
@@ -37,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyInput;
+export default MyTextInput;
