@@ -21,8 +21,8 @@ const MySafeArea: React.FC<SafeAreaViewProps> = ({ children, style }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#fff",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    backgroundColor: "#F9F9F8",
   },
 });
 

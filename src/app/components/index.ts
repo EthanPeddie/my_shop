@@ -11,3 +11,6 @@ export { default as MyModal } from "./MyModal";
 export { default as MyText } from "./MyText";
 export { default as MyTextInput } from "./MyTextInput";
 export { default as MyValidationError } from "./MyValidationError";
+export { default as MySearchBar } from "./MySearchBar";
+export { default as MyImageSlider } from "./MyImageSlider";
+export { default as MyErrorMessage } from "./MyErrorMessage";

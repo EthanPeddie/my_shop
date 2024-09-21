@@ -7,6 +7,12 @@ export default {
   order: require("../../assets/icons/order.png"),
   lock: require("../../assets/icons/padlock.png"),
   search: require("../../assets/icons/search.png"),
-  cart: require("../../assets/icons/shopping-and-commerce.png"),
+  cart: require("../../assets/icons/shopping-cart.png"),
   check: require("../../assets/icons/check-mark.png"),
+  noti: require("../../assets/icons/notification.png"),
+  electronics: require("../../assets/icons/responsive.png"),
+  jewelery: require("../../assets/icons/jewellery.png"),
+  men: require("../../assets/icons/clothes.png"),
+  women: require("../../assets/icons/woman-clothes.png"),
+  loading: require("../../assets/icons/loading.gif"),
 };

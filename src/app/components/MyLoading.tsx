@@ -1,20 +1,49 @@
 import React from "react";
-import { ActivityIndicator, View, StyleSheet, ViewStyle } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  ViewStyle,
+  ImageSourcePropType,
+  ImageStyle,
+  ActivityIndicator,
+} from "react-native";
 
-interface SpinnerProps {
-  size?: "small" | "large";
-  color?: string;
-  style?: ViewStyle;
+import icons from "../constants/icons";
+import colors from "../constants/colors";
+
+interface Props {
+  imageSource?: ImageSourcePropType;
+  size?: number;
+  borderRadius?: number;
+  containerStyle?: ViewStyle;
+  imageStyle?: ImageStyle;
 }
 
-const MySpinner = ({
-  size = "large",
-  color = "#0000ff",
-  style,
-}: SpinnerProps) => {
+const MyLoading = ({
+  imageSource = icons.loading,
+  size = 100,
+  borderRadius = 50,
+  containerStyle,
+  imageStyle,
+}: Props) => {
   return (
-    <View style={[styles.container, style]}>
-      <ActivityIndicator size={size} color={color} />
+    <View style={[styles.container, containerStyle]}>
+      <View style={[styles.loaderContainer, { borderRadius }]}>
+        {/* <Image
+          source={imageSource}
+          style={[
+            styles.loadingImage,
+            { width: size, height: size },
+            imageStyle,
+          ]}
+        /> */}
+        <ActivityIndicator
+          size={"large"}
+          style={{ width: 100, height: 100 }}
+          color={colors.red}
+        />
+      </View>
     </View>
   );
 };
@@ -24,7 +53,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "transparent",
+  },
+  loaderContainer: {
+    padding: 10,
+    borderRadius: 50,
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+  loadingImage: {
+    resizeMode: "cover",
   },
 });
 
-export default MySpinner;
+export default MyLoading;
