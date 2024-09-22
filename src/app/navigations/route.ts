@@ -1,5 +1,5 @@
 const route = {
-  WELCOME: "WELCOME",
+  OnBoarding: "ONBOAEDING",
   LOGIN: "LOGIN",
   SIGNUP: "SIGNUP",
   HOME: "HOME",

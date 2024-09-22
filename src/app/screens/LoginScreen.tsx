@@ -1,7 +1,5 @@
-import { View, StyleSheet, Alert } from "react-native";
-import React, { useContext, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { useNavigation } from "@react-navigation/native";
+import { View, StyleSheet } from "react-native";
+import React, { useState } from "react";
 
 import { MyButton, MyTextInput, MySafeArea, MyText } from "../components/index";
 import colors from "../constants/colors";
@@ -29,6 +27,7 @@ const LoginScreen = () => {
             value={username}
             onChangeText={setUsername}
             autoCapitalize="none"
+            style={{ borderRadius: 15 }}
           />
         </View>
 
@@ -41,11 +40,16 @@ const LoginScreen = () => {
             secureTextEntry
             autoCapitalize="none"
             keyboardType={"visible-password"}
+            style={{ borderRadius: 15 }}
           />
         </View>
       </View>
       <View style={{ width: "100%" }}>
-        <MyButton title="Login" onPress={() => console.log("")} />
+        <MyButton
+          title="Login"
+          onPress={() => console.log("")}
+          style={{ backgroundColor: colors.red, borderRadius: 20 }}
+        />
       </View>
     </MySafeArea>
   );

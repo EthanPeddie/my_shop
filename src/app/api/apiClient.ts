@@ -8,6 +8,19 @@ const api = axios.create({
   },
 });
 
+export const login = async () => {
+  try {
+    const response = await api.get("/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    console.log("login", response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // All Products
 export const fetchProducts = async (limit?: number) => {
   try {

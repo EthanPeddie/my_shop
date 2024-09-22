@@ -1,7 +1,7 @@
 import { NavigationProp } from "@react-navigation/native";
 
 type RootStackParamList = {
-  WELCOME: undefined;
+  OnBoarding: undefined;
   LOGIN: undefined;
   SIGNUP: undefined;
   HOME: undefined;
